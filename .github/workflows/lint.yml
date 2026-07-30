@@ -1,0 +1,47 @@
+name: Lint
+
+on:
+  push:
+    paths:
+      - "**.js"
+      - "**.php"
+      - "**.md"
+      - "**.html"
+  pull_request:
+    paths:
+      - "**.js"
+      - "**.php"
+      - "**.md"
+      - "**.html"
+
+jobs:
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm init -y && npx eslint '**/*.js'
+
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          tools: php-cs-fixer
+      - run: php-cs-fixer fix --dry-run --diff
+
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx markdownlint-cli@latest '**/*.md' --ignore node_modules --config .markdownlint.json
+
+  html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx htmlhint@latest '**/*.html'

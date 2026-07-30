@@ -1,0 +1,28 @@
+# Office documents
+*.docx
+*.pptx
+*.ppsx
+*.xlsx
+
+# Node
+node_modules/
+
+# PHP
+.php_cs.cache
+.php-cs-fixer.cache
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.ruff_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# yEd graph files
+*.graphml
+
+# brModelo files
+*.brM3
