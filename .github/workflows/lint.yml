@@ -22,7 +22,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "latest"
-      - run: npm init -y && npx eslint '**/*.js'
+      - run: |
+          npm install eslint@latest
+          if ls **/*.js 2>/dev/null; then
+            npx eslint '**/*.js'
+          else
+            echo "Nenhum arquivo .js para lintar"
+          fi
 
   php:
     runs-on: ubuntu-latest
@@ -32,7 +38,12 @@ jobs:
         with:
           php-version: "8.3"
           tools: php-cs-fixer
-      - run: php-cs-fixer fix --dry-run --diff
+      - run: |
+          if ls **/*.php 2>/dev/null; then
+            php-cs-fixer fix --dry-run --diff
+          else
+            echo "Nenhum arquivo .php para lintar"
+          fi
 
   markdown:
     runs-on: ubuntu-latest

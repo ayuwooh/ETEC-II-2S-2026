@@ -2,7 +2,8 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
-    ->exclude(['node_modules', '.github']);
+    ->exclude(['node_modules', '.github'])
+    ->notPath('.php-cs-fixer.dist.php');
 
 return (new PhpCsFixer\Config())
     ->setRules([
