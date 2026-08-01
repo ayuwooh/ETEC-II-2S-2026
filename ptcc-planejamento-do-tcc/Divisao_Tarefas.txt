@@ -1,0 +1,17 @@
+Dev Mobile: Willian
+Flutter, React
+
+Dev Web Backend: Willian
+PHP, Python
+
+Dev Web Frontend: Giu
+HTML, CSS, JavaScript
+
+Infraestrutura e Servidores: Ayu
+Linux, Docker, MySQL, Cloud Computing, DevOps
+
+Cibersegurança: Pedro
+Criptografia, 
+
+Design Gráfico & UI/UX:
+Photoshop, GIMP
