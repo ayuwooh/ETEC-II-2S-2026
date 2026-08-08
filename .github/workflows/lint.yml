@@ -7,12 +7,14 @@ on:
       - "**.php"
       - "**.md"
       - "**.html"
+      - "**.dart"
   pull_request:
     paths:
       - "**.js"
       - "**.php"
       - "**.md"
       - "**.html"
+      - "**.dart"
 
 jobs:
   javascript:
@@ -56,3 +58,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npx htmlhint@latest '**/*.html'
+
+  dart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - run: |
+          if ls **/*.dart 2>/dev/null; then
+            dart analyze dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart
+            dart format --output=none --set-exit-if-changed dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart
+          else
+            echo "Nenhum arquivo .dart para lintar"
+          fi

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars -- botao/darkmode são chamados pelos onclick do index.html */
+
 function botao() {
   document.getElementById("titulo").innerHTML = nomeInteiro;
   alert("Você clicou!");

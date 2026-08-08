@@ -4,6 +4,6 @@ Disciplina sobre ética profissional, cidadania nas organizações, relações d
 
 ## Conteúdo
 
-- **Aulas:**
+- **Materiais:**
 - **Atividades:**
 - **Provas:**

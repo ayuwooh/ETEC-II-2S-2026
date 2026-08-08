@@ -4,6 +4,7 @@ Disciplina de planejamento do TCC, abordando metodologia de pesquisa, definiçã
 
 ## Conteúdo
 
-- **Aulas:**
+- **Materiais:**
 - **Atividades:**
 - **Provas:**
+- **TCC:**

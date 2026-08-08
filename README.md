@@ -16,6 +16,19 @@ Trabalhos e atividades do **Módulo II** do curso Técnico em Informática para 
 | [SW1](sw1-sistemas-web-i) | Sistemas Web I | ⬜ |
 | [PTCC](ptcc-planejamento-do-tcc) | Planejamento do Trabalho de Conclusão de Curso | ⬜ |
 
+## Estrutura
+
+Cada disciplina segue o mesmo esqueleto — `atividades/`, `materiais/`, `provas/`
+e `README.md`. Convenções de nomenclatura e lint em [AGENTS.md](AGENTS.md).
+
+```
+<disc>/
+├── atividades/    # exercícios e práticas
+├── materiais/     # slides, apostilas e materiais de aula
+├── provas/        # avaliações
+└── README.md
+```
+
 ## Certificação
 
 Após conclusão dos **Módulos I + II**: **Desenvolvedor de Aplicações Web e Mobile**

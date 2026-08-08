@@ -4,6 +4,10 @@ Disciplina de desenvolvimento mobile, abordando lógica de programação com Jav
 
 ## Conteúdo
 
-- **Aulas:**
+- **Materiais:**
+  - [02_pesquisa_e_revisao.pdf](materiais/02_pesquisa_e_revisao.pdf)
 - **Atividades:**
+  - [01-poo](atividades/01-poo/)
+  - [02-aprofundamento-dart](atividades/02-aprofundamento-dart/)
+  - [03-pratica-dart](atividades/03-pratica-dart/)
 - **Provas:**

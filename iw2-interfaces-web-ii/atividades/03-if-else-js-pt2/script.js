@@ -9,4 +9,4 @@ if (grade >= 7) {
 } else {
   finalgrade = "Reprovado";
 }
-document.writeln(finalgrade)
+document.writeln(finalgrade);
