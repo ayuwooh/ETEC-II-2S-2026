@@ -34,6 +34,9 @@ class Operacao
 
     public function dividir()
     {
+        if ($this->valor2 == 0) {
+            return "Divisão por zero não permitida";
+        }
         $resultado = $this->valor1 / $this->valor2;
         return $resultado;
     }
