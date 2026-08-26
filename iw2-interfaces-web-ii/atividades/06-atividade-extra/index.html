@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Calculadora</h1>
+        <p>Escolha uma operação:</p>
+        <div>
+            <button id="soma">Soma</button>
+            <button id="sub">Subtração</button>
+            <button id="div">Divisão</button>
+            <button id="multi">Multiplicação</button>
+        </div>
+        <h1>Galeria</h1>
+        <p>Escolha uma imagem:</p>
+        <div>
+            <button onclick="changeImg('negao')">negao</button>
+            <button onclick="changeImg('chick')">chick</button>
+            <button onclick="changeImg('maomao')">maomao</button>
+            <button onclick="changeImg('js')">js</button>
+            <button onclick="changeImg('baby')">baby</button>
+        </div>
+        <img id="img" src="#" alt="">
+        <h1>Hora do Dia</h1>
+        <p>Escolha um botão:</p>
+        <div>
+            <button onclick="timeImgChange('bomdia')">bom dia</button>
+            <button onclick="timeImgChange('boatarde')">boa tarde</button>
+            <button onclick="timeImgChange('boanoite')">boa noite</button>
+        </div>
+        <p id="msg"></p>
+        <img id="img2" src="#" alt="">
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
