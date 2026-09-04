@@ -10,7 +10,7 @@
 <body>
     <div class="resultado">
         <?php if ($auth): ?>
-            <p>Login bem sucedido. Bem-vindo, <?php echo htmlspecialchars($user); ?>!</p>
+            <p>Login bem sucedido.</p>
         <?php else: ?>
             <p>Usuário ou senha inválidos. <a href="index.html">Tentar novamente</a>.</p>
         <?php endif; ?>
