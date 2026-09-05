@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Candidatos</h1>
+    </header>
+    <main>
+        <div class="candidates">
+            <div class="card">
+                <img src="imgs/palpatine.jpg" alt="Palpatine">
+                <h2>Palpatine</h2>
+                <h3>66</h3>
+            </div>
+            <div class="card">
+                <img src="imgs/breen.jpg" alt="Wallace Breen">
+                <h2>Wallace Breen</h2>
+                <h3>17</h3>
+            </div>
+            <div class="card">
+                <img src="imgs/sauron.jpg" alt="Sauron">
+                <h2>Sauron</h2>
+                <h3>9</h3>
+            </div>
+            <div class="card">
+                <img src="imgs/glados.png" alt="GLaDOS">
+                <h2>GLaDOS</h2>
+                <h3>42</h3>
+            </div>
+            <div class="card">
+                <img src="imgs/ulfric.jpeg" alt="Jarl Ulfric">
+                <h2>Jarl Ulfric</h2>
+                <h3>5</h3>
+            </div>
+        </div>
+        <div class="urna">
+            <div class="tela">
+                <p id="numero"></p>
+            </div>
+            <div class="teclado">
+                <button data-num="1">1</button>
+                <button data-num="2">2</button>
+                <button data-num="3">3</button>
+                <button data-num="4">4</button>
+                <button data-num="5">5</button>
+                <button data-num="6">6</button>
+                <button data-num="7">7</button>
+                <button data-num="8">8</button>
+                <button data-num="9">9</button>
+                <button data-num="0">0</button>
+            </div>
+            <div class="botoes">
+                <button id="branco">BRANCO</button>
+                <button id="corrige">CORRIGE</button>
+                <button id="confirma">CONFIRMA</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
