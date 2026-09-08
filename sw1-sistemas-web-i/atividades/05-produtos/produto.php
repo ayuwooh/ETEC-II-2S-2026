@@ -18,11 +18,11 @@ class product
 
     public function setDiscount($discount)
     {
-        if ($discount == "1") {
+        if ($discount == '1') {
             $this->discount = 0.10;
-        } else if ($discount == "2") {
+        } elseif ($discount == '2') {
             $this->discount = 0.25;
-        } else if ($discount == "3") {
+        } elseif ($discount == '3') {
             $this->discount = 0.50;
         }
     }
@@ -38,12 +38,12 @@ class product
     public function calc()
     {
         $totalprice = $this->price * $this->quantity;
-        if ($this->discount != 0){
+        if ($this->discount != 0) {
             $discountValue = $totalprice * $this->discount;
             $pricewdisc = $totalprice - $discountValue;
             return $pricewdisc;
-            } else {
-                return $totalprice;
-            }
+        } else {
+            return $totalprice;
+        }
     }
 }

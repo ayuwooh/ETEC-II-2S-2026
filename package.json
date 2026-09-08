@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "npm run lint:js && npm run lint:md && npm run lint:html",
     "lint:js": "eslint '**/*.js' --ignore-pattern node_modules/",
-    "lint:md": "markdownlint-cli '**/*.md' --ignore node_modules --config .markdownlint.json",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --config .markdownlint.json",
     "lint:html": "htmlhint '**/*.html' --config .htmlhintrc"
   },
   "devDependencies": {

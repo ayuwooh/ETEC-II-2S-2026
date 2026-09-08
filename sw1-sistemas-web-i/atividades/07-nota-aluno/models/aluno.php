@@ -1,24 +1,31 @@
 <?php
 
-class Aluno {
+class Aluno
+{
     private $nome;
-    private $nota1, $nota2, $nota3;
+    private $nota1;
+    private $nota2;
+    private $nota3;
     private $faltas;
     private $media;
 
-    public function setNome($nome) {
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
 
-    public function setFaltas($faltas) {
+    public function setFaltas($faltas)
+    {
         $this->faltas = $faltas;
     }
 
-    public function calcularMedia($nota1, $nota2, $nota3) {
+    public function calcularMedia($nota1, $nota2, $nota3)
+    {
         $this->nota1 = $nota1;
         $this->nota2 = $nota2;
         $this->nota3 = $nota3;
@@ -26,28 +33,31 @@ class Aluno {
         return $this->media;
     }
 
-    public function getMedia() {
+    public function getMedia()
+    {
         return $this->media;
     }
 
-    public function calcularPresenca() {
+    public function calcularPresenca()
+    {
         $presenca = ((80 - $this->faltas) / 80) * 100;
         return $presenca;
     }
 
-    public function mostrarResultado() {
+    public function mostrarResultado()
+    {
         $presenca = $this->calcularPresenca();
 
         if ($presenca < 75) {
-            return "Reprovado por falta";
+            return 'Reprovado por falta';
         }
 
         if ($this->media < 5) {
-            return "Reprovado";
+            return 'Reprovado';
         } elseif ($this->media >= 5 && $this->media <= 7) {
-            return "Recuperação";
+            return 'Recuperação';
         } else {
-            return "Aprovado";
+            return 'Aprovado';
         }
     }
 }

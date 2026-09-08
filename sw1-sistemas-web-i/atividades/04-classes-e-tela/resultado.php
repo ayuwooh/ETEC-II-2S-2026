@@ -3,7 +3,6 @@
 require_once 'operacao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $minhaConta = new Operacao();
 
     $minhaConta->setValor1($_POST['valor1'] ?? 0);
@@ -12,17 +11,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $operacao = $_POST['operacao'] ?? 0;
 
     if ($operacao == 0) {
-        $resultado = "Selecione uma operação.";
+        $resultado = 'Selecione uma operação.';
     } elseif ($operacao == 1) {
-        $resultado = "Soma: " . $minhaConta->somar();
+        $resultado = 'Soma: ' . $minhaConta->somar();
     } elseif ($operacao == 2) {
-        $resultado = "Subtração: " . $minhaConta->subtrair();
+        $resultado = 'Subtração: ' . $minhaConta->subtrair();
     } elseif ($operacao == 3) {
-        $resultado = "Multiplicação: " . $minhaConta->multiplicar();
+        $resultado = 'Multiplicação: ' . $minhaConta->multiplicar();
     } elseif ($operacao == 4) {
-        $resultado = "Divisão: " . $minhaConta->dividir();
+        $resultado = 'Divisão: ' . $minhaConta->dividir();
     } elseif ($operacao == 5) {
-        $resultado = "Exponenciação: " . $minhaConta->exponenciar();
+        $resultado = 'Exponenciação: ' . $minhaConta->exponenciar();
     }
 }
 ?>

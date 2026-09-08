@@ -10,8 +10,8 @@
 <body>
     <div class="resultado">
         <?php if (isset($result)): ?>
-            <p><?php echo "Produto: " . $product?></p>
-            <p><?php echo "Preço: R$ " . number_format($result, 2, ',', '.'); ?></p>
+            <p><?php echo 'Produto: ' . $product?></p>
+            <p><?php echo 'Preço: R$ ' . number_format($result, 2, ',', '.'); ?></p>
             <?php if ($lowstock): ?>
                 <p class="estoque">Estoque Baixo!</p>
             <?php endif; ?>

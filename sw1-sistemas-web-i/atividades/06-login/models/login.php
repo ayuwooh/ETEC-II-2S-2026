@@ -1,18 +1,22 @@
 <?php
 
-class Login {
+class Login
+{
     private $user = 'admin';
     private $password = '$2y$10$KKton6U34pfxeaWehTAlSembspHkihnOlPFl82faEom/jrccoqwMW';
 
-    public function getUser() {
+    public function getUser()
+    {
         return $this->user;
     }
 
-    public function getPassword() {
+    public function getPassword()
+    {
         return $this->password;
     }
 
-    public function verify($password) {
+    public function verify($password)
+    {
         return password_verify($password, $this->password);
     }
 }

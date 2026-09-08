@@ -56,6 +56,5 @@ Instale as dependências uma vez: `npm install`.
 - Dart: `dart analyze` e `dart format --output=none --set-exit-if-changed`
   nas pastas de atividades de DMI (`03-pratica-dart/` e `04-beecrowd/`)
 
-> **Atividades:** o código dentro de `atividades/` é material de aprendizado e pode
-> conter violações de lint (estilos antigos, variáveis implícitas etc.). O CI roda os
-> lints e falhas aí são esperadas — servem de sinalização para revisão, não de bloqueio.
+> **Atividades:** o código dentro de `atividades/` deve passar nos lints acima.
+> Se algum lint falhar, corrija o código (ou o config), não o ignore.

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  String name = (stdin.readLineSync()!);
+  stdin.readLineSync();
   double fixesSal = double.parse(stdin.readLineSync()!);
   double totalSold = double.parse(stdin.readLineSync()!);
 

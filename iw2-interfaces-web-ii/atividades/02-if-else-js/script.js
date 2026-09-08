@@ -13,17 +13,17 @@
 // }
 // document.writeln(classe)
 
-age2 = 52;
-classe2 = "";
+const age2 = 52;
+let classe2 = '';
 if (age2 > 50) {
-  classe2 = "Idoso";
+  classe2 = 'Idoso';
 } else if (age2 > 24) {
-  classe2 = "Adulto";
+  classe2 = 'Adulto';
 } else if (age2 > 18) {
-  classe2 = "Jovem Adulto";
+  classe2 = 'Jovem Adulto';
 } else if (age2 > 11) {
-  classe2 = "Jovem";
+  classe2 = 'Jovem';
 } else {
-  classe2 = "Criança";
+  classe2 = 'Criança';
 }
 document.writeln(classe2);
