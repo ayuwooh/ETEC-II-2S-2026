@@ -1,0 +1,16 @@
+{
+  "name": "etec-ii-2s-2026",
+  "private": true,
+  "description": "Trabalhos e atividades do Módulo II — ETEC de Hortolândia",
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:md && npm run lint:html",
+    "lint:js": "eslint '**/*.js' --ignore-pattern node_modules/",
+    "lint:md": "markdownlint-cli '**/*.md' --ignore node_modules --config .markdownlint.json",
+    "lint:html": "htmlhint '**/*.html' --config .htmlhintrc"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "htmlhint": "^1.1.0",
+    "markdownlint-cli": "^0.44.0"
+  }
+}

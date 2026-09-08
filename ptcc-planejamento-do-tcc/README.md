@@ -2,9 +2,19 @@
 
 Disciplina de planejamento do TCC, abordando metodologia de pesquisa, definição de tema, cronograma, documentação e apresentação do projeto.
 
-## Conteúdo
+## Materiais
 
-- **Materiais:**
-- **Atividades:**
-- **Provas:**
-- **TCC:**
+Pendente.
+
+## Atividades
+
+- [01_proposta.pdf](atividades/01_proposta.pdf) — proposta do TCC
+- [02_formulario_caracterizacao_inicial_tcc.pdf](atividades/02_formulario_caracterizacao_inicial_tcc.pdf) — formulário de caracterização inicial do TCC
+
+## TCC
+
+Pendente.
+
+## Provas
+
+Pendente.

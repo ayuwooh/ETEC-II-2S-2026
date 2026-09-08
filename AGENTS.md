@@ -4,7 +4,7 @@
 
 Cada disciplina (`*-nome-da-disciplina/`) segue o mesmo esqueleto:
 
-```
+```text
 <disc>/
 ├── atividades/    # exercícios e práticas
 ├── materiais/     # slides, apostilas e materiais de aula
@@ -24,24 +24,38 @@ um `.gitkeep` para preservar a estrutura no git.
 
 Exemplo:
 
-```
+```text
 atividades/
 ├── 01-poo/
 │   ├── 01_orientacao_a_objetos.pdf
 │   └── 02_poo_aprofundamento.pdf
 └── 02-aprofundamento-dart/
-    └── aprofundamento_dart.pdf
+    └── 02_aprofundamento_dart.pdf
 ```
 
 ## Documentos do Office
 
-`.docx`, `.pptx`, `.ppsx` e `.xlsx` são ignorados pelo git. Sempre que houver a
-versão editável e o PDF, mantenha apenas o PDF versionado.
+`.docx`, `.pptx`, `.ppsx` e `.xlsx` são ignorados pelo git e não devem ser versionados.
+Sempre que houver a versão editável e o PDF, mantenha apenas o PDF versionado.
+
+Para desvincular um arquivo que já foi versionado sem removê-lo do disco:
+
+```text
+git rm --cached <arquivo.docx>
+```
 
 ## Lint
 
-- JavaScript: `npx eslint '**/*.js'` (config: `eslint.config.mjs`)
+Instale as dependências uma vez: `npm install`.
+
+- Tudo (JS + Markdown + HTML): `npm run lint`
+- JavaScript: `npm run lint:js`
+- Markdown: `npm run lint:md`
+- HTML: `npm run lint:html`
 - PHP: `php-cs-fixer fix --dry-run --diff` (config: `.php-cs-fixer.dist.php`)
-- Markdown: `npx markdownlint-cli@latest '**/*.md' --ignore node_modules --config .markdownlint.json`
-- HTML: `npx htmlhint@latest '**/*.html'`
-- Dart: `dart analyze` e `dart format --output=none --set-exit-if-changed` na pasta `dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart/`
+- Dart: `dart analyze` e `dart format --output=none --set-exit-if-changed`
+  nas pastas de atividades de DMI (`03-pratica-dart/` e `04-beecrowd/`)
+
+> **Atividades:** o código dentro de `atividades/` é material de aprendizado e pode
+> conter violações de lint (estilos antigos, variáveis implícitas etc.). O CI roda os
+> lints e falhas aí são esperadas — servem de sinalização para revisão, não de bloqueio.
