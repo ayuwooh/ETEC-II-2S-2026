@@ -1,12 +1,12 @@
-grade = 10;
-finalgrade = "";
+const grade = 10;
+let finalgrade = '';
 if (grade >= 7) {
-  finalgrade = "Excelente";
+  finalgrade = 'Excelente';
 } else if (grade >= 5) {
-  finalgrade = "Aprovado";
+  finalgrade = 'Aprovado';
 } else if (grade >= 3) {
-  finalgrade = "Recuperação";
+  finalgrade = 'Recuperação';
 } else {
-  finalgrade = "Reprovado";
+  finalgrade = 'Reprovado';
 }
 document.writeln(finalgrade);

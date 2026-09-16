@@ -1,8 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-void main()
-{
+void main() {
   List<String> line = stdin.readLineSync()!.split(' ');
   double A = double.parse(line[0]);
   double B = double.parse(line[1]);

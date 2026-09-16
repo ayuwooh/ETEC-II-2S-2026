@@ -24,10 +24,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "latest"
+      - run: npm install --no-audit --no-fund
       - run: |
-          npm install eslint@latest
-          if ls **/*.js 2>/dev/null; then
-            npx eslint '**/*.js'
+          if find . -name '*.js' -not -path './node_modules/*' | grep -q .; then
+            npm run lint:js
           else
             echo "Nenhum arquivo .js para lintar"
           fi
@@ -41,7 +41,7 @@ jobs:
           php-version: "8.3"
           tools: php-cs-fixer
       - run: |
-          if ls **/*.php 2>/dev/null; then
+          if find . -name '*.php' -not -path './node_modules/*' | grep -q .; then
             php-cs-fixer fix --dry-run --diff
           else
             echo "Nenhum arquivo .php para lintar"
@@ -51,13 +51,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npx markdownlint-cli@latest '**/*.md' --ignore node_modules --config .markdownlint.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint:md
 
   html:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npx htmlhint@latest '**/*.html'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint:html
 
   dart:
     runs-on: ubuntu-latest
@@ -67,9 +75,9 @@ jobs:
         with:
           sdk: stable
       - run: |
-          if ls **/*.dart 2>/dev/null; then
-            dart analyze dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart
-            dart format --output=none --set-exit-if-changed dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart
+          if find . -name '*.dart' | grep -q .; then
+            dart analyze dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/03-pratica-dart dmi-desenvolvimento-para-dispositivos-moveis-i/atividades/04-beecrowd
+            dart format --output=none --set-exit-if-changed dmi-desenvolvimento-para-dispositivos-moveis-i/atividades
           else
             echo "Nenhum arquivo .dart para lintar"
           fi

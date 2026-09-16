@@ -1,4 +1,5 @@
 <?php
+
 require_once 'models/login.php';
 
 $auth = false;
