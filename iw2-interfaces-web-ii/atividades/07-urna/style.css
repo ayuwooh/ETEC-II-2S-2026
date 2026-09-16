@@ -10,7 +10,7 @@ header {
 }
 
 img {
-    max-width: 275px;
+    max-width: 200px;
     padding: 0 50px 25px;
     transition: all 0.3s ease;
 }
