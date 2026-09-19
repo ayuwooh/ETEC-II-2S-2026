@@ -1,30 +1,36 @@
 <?php
 
-class ContaBancaria {
+class ContaBancaria
+{
     private $titular;
     private $saldo;
 
-    public function setTitular($nome) {
+    public function setTitular($nome)
+    {
         $this->titular = $nome;
     }
 
-    public function getTitular() {
+    public function getTitular()
+    {
         return $this->titular;
     }
 
-    public function depositar($valor) {
+    public function depositar($valor)
+    {
         $this->saldo += $valor;
     }
 
-    public function consultarSaldo() {
+    public function consultarSaldo()
+    {
         return $this->saldo;
     }
 
-    public function sacar($valor) {
+    public function sacar($valor)
+    {
         if ($this->saldo >= $valor) {
             $this->saldo -= $valor;
         } else {
-            echo "Saldo insuficiente.<br/>";
+            echo 'Saldo insuficiente.<br/>';
         }
     }
 }

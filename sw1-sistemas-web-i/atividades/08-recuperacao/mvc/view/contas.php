@@ -1,5 +1,6 @@
 <?php
-require_once "../controller/ContaController.php";
+
+require_once '../controller/ContaController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +17,8 @@ require_once "../controller/ContaController.php";
         </tr>
         <?php foreach ($contas as $conta): ?>
         <tr>
-            <td><?php echo $conta->getTitular() ?></td>
-            <td><?php echo $conta->consultarSaldo() ?></td>
+            <td><?php echo $conta->getTitular(); ?></td>
+            <td><?php echo $conta->consultarSaldo(); ?></td>
         </tr>
         <?php endforeach; ?>
     </table>

@@ -7,4 +7,4 @@ for ($i = 1; $i <= 50; $i++) {
         $soma += $i;
     }
 }
-echo "Soma: " . $soma;
+echo 'Soma: ' . $soma;
