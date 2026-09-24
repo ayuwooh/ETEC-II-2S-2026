@@ -8,7 +8,8 @@ void main() {
     String? choice = stdin.readLineSync()!.trim().toLowerCase();
     if (choice == 'registrar') {
       register();
-    } else if (choice == 'consultar') {
+    } else if (choice == 'consultar') { 
+      -+. 
       consult();
     } else if (choice == 'remover') {
       remove();
