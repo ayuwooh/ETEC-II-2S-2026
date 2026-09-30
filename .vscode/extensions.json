@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "DavidAnson.vscode-markdownlint",
+    "HTMLHint.vscode-htmlhint",
+    "bmewburn.vscode-intelephense-client",
+    "junstyle.php-cs-fixer",
+    "Dart-Code.dart-code"
+  ]
+}

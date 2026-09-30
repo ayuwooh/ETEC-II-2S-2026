@@ -17,5 +17,17 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "php.validate.enable": true,
-  "eslint.validate": ["javascript", "html"]
+  "eslint.validate": ["javascript", "html"],
+  "markdownlint.config": {
+    "extends": ".markdownlint.json"
+  },
+  "htmlhint.options": {
+    "configFile": ".htmlhintrc"
+  },
+  "php-cs-fixer.configFile": ".php-cs-fixer.dist.php",
+  "php-cs-fixer.onsave": true,
+  "dart.analysisExcludedFolders": [
+    "**/node_modules",
+    "**/.dart_tool"
+  ]
 }
