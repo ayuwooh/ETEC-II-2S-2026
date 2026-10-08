@@ -1,3 +1,5 @@
+/* exported miaou */
+
 var audio = new Audio();
 var fontes = ['audio/miaou.mp3', 'audio/miaou2.mp3'];
 var indiceAudio = 0;

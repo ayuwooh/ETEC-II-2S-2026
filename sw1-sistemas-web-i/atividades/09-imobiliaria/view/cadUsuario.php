@@ -25,5 +25,5 @@
 if (isset($_POST['btnSalvar'])) {
     require_once '../controller/usuarioController.php';
 
-    call_user_func(array('usuarioController','salvar'));
+    call_user_func(['usuarioController','salvar']);
 }

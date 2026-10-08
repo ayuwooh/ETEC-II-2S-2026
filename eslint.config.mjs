@@ -24,6 +24,7 @@ export default [
                 navigator: "readonly",
                 localStorage: "readonly",
                 fetch: "readonly",
+                Audio: "readonly",
             },
         },
         rules: {

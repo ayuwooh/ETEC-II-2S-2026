@@ -1,4 +1,4 @@
-import 'livro.dart', 'dart:io';
+import 'livro.dart';
 
 void main() {
   Livro livro1 = Livro('O Hobbit', 'J. R. R. Tolkien', 1937);
