@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>TechFuture</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
+</head>
+
+<body onload="showDate()" onresize="screenSize()">
+
+<header>
+    <h1>TechFuture</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <label class="switch">
+        <input type="checkbox" onchange="switchTheme()">
+        <span class="slider round"></span>
+    </label>
+</header>
+
+<section class="banner">
+    <div class="overlay">
+        <h2 onclick="bannerText()" ondblclick="jumpscare()">Tecnologia e Inovação</h2>
+        <p>Conheça o futuro da tecnologia</p>
+    </div>
+</section>
+
+<img src="#" alt="" id="jumpscare">
+
+<section class="cards">
+
+    <div class="card" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
+        <img src="img/produto1.jpg">
+        <h3>IoT</h3>
+        <p>Soluções inteligentes conectadas.</p>
+    </div>
+
+    <div class="card" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
+        <img src="img/produto2.jpg">
+        <h3>Cloud</h3>
+        <p>Armazenamento e processamento.</p>
+    </div>
+
+    <div class="card" onmouseover="cardOver(this)" onmouseout="cardOut(this)">
+        <img src="img/equipe.jpg">
+        <h3>Equipe</h3>
+        <p>Profissionais especializados.</p>
+    </div>
+
+</section>
+
+<footer onmousemove="mousePos(event)" onmousedown="btnDown()" onmouseup="btnUp()">
+    <p>TechFuture 2026</p>
+    <p id="posicao">-</p>
+    <p id="status">Botão solto</p>
+    <p id="hoje"></p>
+    <p id="tela"></p>
+</footer>
+
+</body>
+</html>

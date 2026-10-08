@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Cadastro</h1>
+
+    <label class="switch">
+        <input type="checkbox" onchange="switchTheme()">
+        <span class="slider round"></span>
+    </label>
+</header>
+
+<main>
+<form class="formulario">
+
+    <label>Nome</label>
+    <input type="text" onfocus="hint(true)" onblur="hint(false)"
+           onkeydown="typed(event)" onkeyup="released()" oninput="countChars(this)">
+    <p id="dica" hidden>digite só letras</p>
+    <p id="contador">0 caracteres</p>
+    <p id="tecla">nenhuma tecla apertada</p>
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Telefone</label>
+    <input type="tel">
+
+    <label>CPF</label>
+    <input type="text">
+
+    <label>Data de nascimento</label>
+    <input type="date">
+
+    <label>UF</label>
+    <select>
+        <option>SP</option>
+        <option>RJ</option>
+        <option>MG</option>
+        <option>PR</option>
+    </select>
+
+    <label>Sexo</label>
+
+    <div class="radio-group">
+        <input type="radio" name="sexo"> Masculino
+        <input type="radio" name="sexo"> Feminino
+        <input type="radio" name="sexo"> Outro
+    </div>
+
+    <label>Hobbies</label>
+
+    <div class="check-group">
+        <input type="checkbox"> Games
+        <input type="checkbox"> Música
+        <input type="checkbox"> Filmes
+        <input type="checkbox"> Tecnologia
+    </div>
+
+    <button>Cadastrar</button>
+
+</form>
+</main>
+
+</body>
+</html>
