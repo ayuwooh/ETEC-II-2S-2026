@@ -1,6 +1,9 @@
 import 'dart:io';
 
-class ContaBancaria {
+abstract class ContaBancaria {
+  String titular = 'Gay';
+  String numero = '1';
+  String _pin = '123';
   double _saldo = 6969;
 
   getSaldo() {
@@ -22,21 +25,48 @@ class ContaBancaria {
   }
 }
 
+class ContaCorrente extends ContaBancaria {
+  double taxa = 0.02;
+
+  getTax() {
+    double toPay = this._saldo * taxa;
+    return toPay;
+  }
+
+  payTax() {
+    double toPay = this._saldo * taxa;
+    this._saldo -= toPay;
+  }
+}
+
 void main() {
-  ContaBancaria a = ContaBancaria();
-  print('Bem vindo(a) a sua conta bancaria.');
+  ContaCorrente a = ContaCorrente();
+  print('Bem vindo ${a.titular} a sua conta bancaria.');
   print('Seu saldo é de: ${a.getSaldo()}');
   while (true) {
-    print('Deseja depositar ou sacar? Digite "sair" para fechar.');
+    print(
+      'Deseja depositar, sacar ou "pagar" taxa? Digite "sair" para fechar.',
+    );
     String? choice = stdin.readLineSync()!.trim().toLowerCase();
     if (choice == 'depositar') {
       print('Digite o quanto deseja depositar:');
       double deposit = double.parse(stdin.readLineSync()!);
       a.deposit(deposit);
     } else if (choice == 'sacar') {
-      print('Digite o quanto deseja sacar:');
-      double withdraw = double.parse(stdin.readLineSync()!);
-      a.withdraw(withdraw);
+      print('Digite seu PIN');
+      String? pin = stdin.readLineSync()!.trim();
+      if (pin == a._pin) {
+        print('Digite o quanto deseja sacar:');
+        double withdraw = double.parse(stdin.readLineSync()!);
+        a.withdraw(withdraw);
+      } else {
+        print('PIN incorreto.');
+        continue;
+      }
+    } else if (choice == 'pagar') {
+      print('Valor da taxa: ${a.getTax()}');
+      a.payTax();
+      print('Taxa paga com sucesso!');
     } else if (choice == 'sair') {
       break;
     } else {
