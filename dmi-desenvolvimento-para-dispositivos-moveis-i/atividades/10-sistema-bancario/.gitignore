@@ -1,0 +1,4 @@
+# Artefatos gerados pelo Dart
+.dart_tool/
+.packages
+build/
