@@ -6,16 +6,16 @@ abstract class ContaBancaria {
   String _pin = '123';
   double _saldo = 6969;
 
-  getSaldo() {
+  double getSaldo() {
     return this._saldo;
   }
 
-  deposit(deposit) {
+  void deposit(double deposit) {
     this._saldo += deposit;
     print('Novo saldo: ${_saldo}');
   }
 
-  withdraw(withdraw) {
+  void withdraw(double withdraw) {
     if (this._saldo >= withdraw) {
       this._saldo -= withdraw;
       print('Novo saldo: ${_saldo}');
@@ -27,27 +27,54 @@ abstract class ContaBancaria {
 
 class ContaCorrente extends ContaBancaria {
   double taxa = 0.02;
+  double get toPay => _saldo * taxa;
 
-  getTax() {
-    double toPay = this._saldo * taxa;
+  double getTax() {
     return toPay;
   }
 
-  payTax() {
-    double toPay = this._saldo * taxa;
-    this._saldo -= toPay;
+  void payTax() {
+    _saldo -= toPay;
+  }
+}
+
+class ContaPoupanca extends ContaBancaria {
+  double renda = 0.07;
+  double get revenue => _saldo * renda;
+
+  double getRev() {
+    return revenue;
+  }
+
+  void revIncome() {
+    _saldo += revenue;
   }
 }
 
 void main() {
-  ContaCorrente a = ContaCorrente();
+  print('Digite o tipo de conta que deseja criar: Corrente ou Poupança');
+  String? accType = stdin.readLineSync()!.trim().toLowerCase();
+
+  late ContaBancaria a;
+
+  if (accType == 'corrente') {
+    a = ContaCorrente();
+  } else if (accType == 'poupança') {
+    a = ContaPoupanca();
+  } else {
+    print('Tipo de conta inválido.');
+    return;
+  }
+
   print('Bem vindo ${a.titular} a sua conta bancaria.');
   print('Seu saldo é de: ${a.getSaldo()}');
+
   while (true) {
     print(
-      'Deseja depositar, sacar ou "pagar" taxa? Digite "sair" para fechar.',
+      'Deseja depositar, sacar, "pagar" taxa ou "receber" renda? Digite "sair" para fechar.',
     );
     String? choice = stdin.readLineSync()!.trim().toLowerCase();
+
     if (choice == 'depositar') {
       print('Digite o quanto deseja depositar:');
       double deposit = double.parse(stdin.readLineSync()!);
@@ -64,9 +91,21 @@ void main() {
         continue;
       }
     } else if (choice == 'pagar') {
-      print('Valor da taxa: ${a.getTax()}');
-      a.payTax();
-      print('Taxa paga com sucesso!');
+      if (a is ContaCorrente) {
+        print('Valor da taxa: ${a.getTax()}');
+        a.payTax();
+        print('Taxa paga com sucesso!');
+      } else {
+        print('Contas poupança não possuem taxas!');
+      }
+    } else if (choice == 'receber') {
+      if (a is ContaPoupanca) {
+        print('Valor de renda: ${a.getRev()}');
+        a.revIncome();
+        print('Renda obtida com sucesso!');
+      } else {
+        print('Contas correntes não recebem renda automática!');
+      }
     } else if (choice == 'sair') {
       break;
     } else {
