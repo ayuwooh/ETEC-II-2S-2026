@@ -14,7 +14,7 @@
             <option value="0"></option>
             <option value="A">Administrador</option>
             <option value="C">Comum</option>
-        </select><br/><br/>
+        </select><br/>
         <input type="submit" name="btnSalvar" id="btnSalvar">
     </form>
 </body>
