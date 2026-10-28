@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aroma Cafeteria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <script src="script/script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand bg-dark" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-warning" href="#">☕ Aroma</a>
+        <button class="btn btn-outline-warning btn-sm" id="btn-tema" type="button">🌙 Tema escuro</button>
+    </div>
+</nav>
+
+<header class="hero text-center text-white">
+    <div class="container">
+        <span class="badge bg-warning text-dark rounded-pill mb-3">Cafeteria artesanal</span>
+        <h1 class="display-4 fw-bold" id="titulo">Um café, um momento.</h1>
+        <p class="lead" id="frase">Grãos selecionados e preparo na hora.</p>
+        <button class="btn btn-warning btn-lg px-4 mt-2" id="btn-frase" type="button">Ver outra frase</button>
+        <p class="small mt-3 mb-0 opacity-75">Dica: dê um duplo clique no título.</p>
+    </div>
+</header>
+
+<main>
+
+    <section class="container my-5">
+        <h2 class="text-center fw-bold">Nossos favoritos</h2>
+        <p class="text-center text-body-secondary mb-4">Passe o mouse sobre os cards e escolha o seu.</p>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="card produto h-100 text-center p-4 d-flex flex-column" data-produto="Espresso">
+                    <div class="display-3">☕</div>
+                    <h3 class="h5 mt-2">Espresso</h3>
+                    <p class="text-body-secondary mb-3">Intenso e curto, do jeito clássico.</p>
+                    <button class="btn btn-warning btn-escolher mt-auto" type="button">Escolher</button>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card produto h-100 text-center p-4 d-flex flex-column" data-produto="Cappuccino">
+                    <div class="display-3">🥛</div>
+                    <h3 class="h5 mt-2">Cappuccino</h3>
+                    <p class="text-body-secondary mb-3">Café cremoso com espuma de leite.</p>
+                    <button class="btn btn-warning btn-escolher mt-auto" type="button">Escolher</button>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card produto h-100 text-center p-4 d-flex flex-column" data-produto="Mocha">
+                    <div class="display-3">🍫</div>
+                    <h3 class="h5 mt-2">Mocha</h3>
+                    <p class="text-body-secondary mb-3">Café, chocolate e muita cremosidade.</p>
+                    <button class="btn btn-warning btn-escolher mt-auto" type="button">Escolher</button>
+                </article>
+            </div>
+        </div>
+
+        <div class="alert alert-warning text-center mt-4 d-none" id="escolha" aria-live="polite"></div>
+    </section>
+
+    <section class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 p-4">
+                    <h2 class="h4 mb-3">Reserve seu café</h2>
+
+                    <form id="form-reserva" novalidate>
+                        <label class="form-label" for="nome">Seu nome</label>
+                        <input class="form-control" id="nome" type="text" maxlength="30" placeholder="Ex.: Ana" required>
+                        <div class="form-text"><span id="contador">0</span> de 30 caracteres</div>
+
+                        <label class="form-label mt-3" for="email">E-mail</label>
+                        <input class="form-control" id="email" type="email" placeholder="voce@email.com" required>
+
+                        <button class="btn btn-warning w-100 mt-4" type="submit">Reservar</button>
+                    </form>
+
+                    <div class="alert alert-success mt-3 mb-0 d-none" id="resposta" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 d-flex flex-column align-items-center justify-content-center text-center">
+                    <p class="text-body-secondary mb-1">Curta a nossa página</p>
+                    <div class="display-1" id="coracao">🤍</div>
+                    <button class="btn btn-outline-danger mt-2" id="btn-curtir" type="button">Curtir <span id="curtidas">0</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="text-center py-4 border-top">
+    <p class="mb-1">Aroma Cafeteria · <span id="data"></span></p>
+    <p class="small text-body-secondary mb-0" id="tela"></p>
+</footer>
+
+</body>
+</html>
