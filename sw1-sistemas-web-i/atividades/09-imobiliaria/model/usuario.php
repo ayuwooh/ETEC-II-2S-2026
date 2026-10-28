@@ -54,7 +54,7 @@ class Usuario extends Banco
     {
         $result = false;
         $conexao = new Conexao();
-        $query = 'insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao';
+        $query = 'insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)';
 
         if ($conn = $conexao->getConnection()) {
             $stmt = $conn->prepare($query);
@@ -62,6 +62,7 @@ class Usuario extends Banco
                 $result = $stmt->rowCount();
             }
         }
+        return $result;
     }
 
     public function listAll()
