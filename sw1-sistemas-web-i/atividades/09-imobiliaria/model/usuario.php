@@ -1,7 +1,7 @@
 <?php
 
 require_once 'banco.php';
-require_once '../conexao.php';
+require_once __DIR__ . '/../conexao.php';
 
 class Usuario extends Banco
 {
@@ -53,17 +53,28 @@ class Usuario extends Banco
     public function save()
     {
         $result = false;
+
         $conexao = new Conexao();
-        $query = 'insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)';
 
         if ($conn = $conexao->getConnection()) {
-            $stmt = $conn->prepare($query);
-            if ($stmt->execute([':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao])) {
-                $result = $stmt->rowCount();
+            if ($this->id > 0) {
+                $query = "UPDATE usuario SET login = :login, senha = :senha, permissao = :permissao WHERE id = :id";
+                $stmt = $conn->prepare($query);
+                if ($stmt->execute(array(':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao, ':id' => $this->id))) {
+                    $result = $stmt->rowCount();
+                }
+            } else {
+                $query = 'insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)';
+                $stmt = $conn->prepare($query);
+                if ($stmt->execute(array(':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao))) {
+                    $result = $stmt->rowCount();
+                }
             }
         }
         return $result;
     }
+
+    public function count() {}
 
     public function listAll()
     {
@@ -81,6 +92,35 @@ class Usuario extends Banco
             $result = false;
         }
 
+        return $result;
+    }
+
+    public function find($id)
+    {
+        $conexao = new Conexao();
+        $conn = $conexao->getConnection();
+        $query = "SELECT * FROM usuario where id = :id";
+        $stmt = $conn->prepare($query);
+        if ($stmt->execute(array(':id' => $id))) {
+            if ($stmt->rowCount() > 0) {
+                $result = $stmt->fetchObject(Usuario::class);
+            }
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    public function remove($id)
+    {
+        $result = false;
+        $conexao = new Conexao();
+        $conn = $conexao->getConnection();
+        $query = "DELETE FROM usuario where id = :id";
+        $stmt = $conn->prepare($query);
+        if ($stmt->execute(array(':id' => $id))) {
+            $result = true;
+        }
         return $result;
     }
 }
