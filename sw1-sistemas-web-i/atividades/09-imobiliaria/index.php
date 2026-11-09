@@ -1,5 +1,6 @@
 <?php
 require_once 'controller/usuarioController.php';
+require_once 'controller/ImovelController.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,9 @@ require_once 'controller/usuarioController.php';
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
             $usuario = call_user_func(array('usuarioController', 'excluir'), $_GET['id']);
             require_once 'view/listUsuario.php';
+        }
+        if ($_GET['action'] == 'cadImovel') {
+            require_once 'view/cadImovel.php';
         }
     } else {
         require_once 'view/cadUsuario.php';

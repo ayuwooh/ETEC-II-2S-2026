@@ -1,6 +1,6 @@
 <?php
 
-require_once 'banco.php'
+require_once 'banco.php';
 require_once __DIR__ . '/../conexao.php';
 
 class Imovel extends Banco
@@ -11,7 +11,7 @@ class Imovel extends Banco
     private $valor;
     private $tipo;
 
-     public function getId()
+    public function getId()
     {
         return $this->id;
     }
@@ -21,7 +21,7 @@ class Imovel extends Banco
         $this->id = $id;
     }
 
-     public function getDescricao()
+    public function getDescricao()
     {
         return $this->descricao;
     }
@@ -31,9 +31,9 @@ class Imovel extends Banco
         $this->descricao = $descricao;
     }
 
-     public function getFoto()
+    public function getFoto()
     {
-        return $this->fot;
+        return $this->foto;
     }
 
     public function setFoto($foto)
@@ -41,7 +41,7 @@ class Imovel extends Banco
         $this->foto = $foto;
     }
 
-     public function getValor()
+    public function getValor()
     {
         return $this->id;
     }
@@ -51,7 +51,7 @@ class Imovel extends Banco
         $this->valor = $valor;
     }
 
-     public function getTipo()
+    public function getTipo()
     {
         return $this->id;
     }
@@ -85,11 +85,11 @@ class Imovel extends Banco
         return $result;
     }
 
-    public function cout(){}
+    public function count() {}
 
-    public function listAll(){}
+    public function listAll() {}
 
-    public function find($id){}
+    public function find($id) {}
 
-    public function remove($id){}
+    public function remove($id) {}
 }
