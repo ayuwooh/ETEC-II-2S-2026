@@ -32,8 +32,8 @@
                             <td><?php echo $usuario->getLogin(); ?></td>
                             <td><?php echo $usuario->getPermissao(); ?></td>
                             <td>
-                                <a href="index.php?action=editar&id=<?php echo $usuario->getId(); ?>">Editar</a>
-                                <a href="index.php?action=excluir&id=<?php echo $usuario->getId(); ?>">Excluir</a>
+                                <a href="index.php?action=editarUsuario&id=<?php echo $usuario->getId(); ?>">Editar</a>
+                                <a href="index.php?action=excluirUsuario&id=<?php echo $usuario->getId(); ?>">Excluir</a>
                             </td>
                         </tr>
                     <?php

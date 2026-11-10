@@ -87,7 +87,24 @@ class Imovel extends Banco
 
     public function count() {}
 
-    public function listAll() {}
+    public function listAll()
+    {
+        $conexao = new Conexao();
+        $conn = $conexao->getConnection();
+        $query = 'SELECT * FROM imovel';
+        $stmt = $conn->prepare($query);
+        $result = [];
+
+        if ($stmt->execute()) {
+            while ($rs = $stmt->fetchObject(Imovel::class)) {
+                $result[] = $rs;
+            }
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
 
     public function find($id) {}
 
