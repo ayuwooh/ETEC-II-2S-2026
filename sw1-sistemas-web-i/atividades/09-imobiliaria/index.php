@@ -1,5 +1,5 @@
 <?php
-require_once 'controller/usuarioController.php';
+require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
 ?>
 
@@ -19,7 +19,7 @@ require_once 'controller/ImovelController.php';
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'editar') {
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
-            $usuario = call_user_func(array('usuarioController', 'editar'), $_GET['id']);
+            $usuario = call_user_func(array('UsuarioController', 'editar'), $_GET['id']);
             require_once 'view/cadUsuario.php';
         }
         if ($_GET['action'] == 'listar') {
@@ -28,7 +28,7 @@ require_once 'controller/ImovelController.php';
 
         if ($_GET['action'] == 'excluir') {
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
-            $usuario = call_user_func(array('usuarioController', 'excluir'), $_GET['id']);
+            $usuario = call_user_func(array('UsuarioController', 'excluir'), $_GET['id']);
             require_once 'view/listUsuario.php';
         }
         if ($_GET['action'] == 'cadImovel') {

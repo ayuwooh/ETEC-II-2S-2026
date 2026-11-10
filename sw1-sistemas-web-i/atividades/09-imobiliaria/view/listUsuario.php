@@ -21,7 +21,7 @@
             </thead>
             <tbody>
                 <?php
-                require_once __DIR__ . '/../controller/usuarioController.php';
+                require_once __DIR__ . '/../controller/UsuarioController.php';
 
                 $usuarios = call_user_func(array('UsuarioController', 'listar'));
 

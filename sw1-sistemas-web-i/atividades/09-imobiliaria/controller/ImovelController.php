@@ -4,7 +4,7 @@ require_once __DIR__ . '/../model/imovel.php';
 
 class ImovelController
 {
-    public function salvar()
+    static public function salvar()
     {
         $imovel = new Imovel();
 
@@ -17,20 +17,20 @@ class ImovelController
         $imovel->save();
     }
 
-    public function listar()
+    static public function listar()
     {
         $imovel = new Imovel();
         return $imovel->listAll();
     }
 
-    public function editar($id)
+    static public function editar($id)
     {
         $imovel = new Imovel();
         $imovel = $imovel->find($id);
         return $imovel;
     }
 
-    public function excluir($id)
+    static public function excluir($id)
     {
         $imovel = new Imovel();
         $imovel = $imovel->remove($id);

@@ -24,8 +24,8 @@
 
 <?php
 if (isset($_POST['btnSalvar'])) {
-    require_once __DIR__ . '/../controller/usuarioController.php';
-    call_user_func(array(new UsuarioController(), 'salvar'));
+    require_once __DIR__ . '/../controller/UsuarioController.php';
+    call_user_func(array('UsuarioController', 'salvar'));
     header('Location: index.php?action=listar');
 }
 ?>

@@ -14,9 +14,9 @@
         Valor: <input type="number" step=".01" class="form-control col-sm-8" name="valor" id="valor" value="<?php echo isset($imovel) ? $imovel->getValor() : '' ?>"></br>
         <select class="form-control col-sm-8" name="tipo" id="tipo">
             <option value="0">Selecione</option>
-            <option value="C" <?php echo isset($imovel) && $imovel->getTipo() == 'A' ? 'selected' : '' ?>>Casa</option>
-            <option value="A" <?php echo isset($imovel) && $imovel->getTipo() == 'C' ? 'selected' : '' ?>>Apartamento</option>
-            <option value="T" <?php echo isset($imovel) && $imovel->getTipo() == 'C' ? 'selected' : '' ?>>Terreno</option>
+            <option value="C" <?php echo isset($imovel) && $imovel->getTipo() == 'C' ? 'selected' : '' ?>>Casa</option>
+            <option value="A" <?php echo isset($imovel) && $imovel->getTipo() == 'A' ? 'selected' : '' ?>>Apartamento</option>
+            <option value="T" <?php echo isset($imovel) && $imovel->getTipo() == 'T' ? 'selected' : '' ?>>Terreno</option>
         </select><br />
         <input type="hidden" name="id" id="id" value="<?php echo isset($imovel) ? $imovel->getId() : '' ?>">
         <input type="submit" class="btn-default" name="btnSalvar" id="btnSalvar">
@@ -26,7 +26,7 @@
 <?php
 if (isset($_POST['btnSalvar'])) {
     require_once __DIR__ . '/../controller/ImovelController.php';
-    call_user_func(array(new ImovelController(), 'salvar'));
+    call_user_func(array('ImovelController', 'salvar'));
     header('Location: index.php?action=listar');
 }
 ?>
