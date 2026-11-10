@@ -27,7 +27,7 @@
 if (isset($_POST['btnSalvar'])) {
     require_once __DIR__ . '/../controller/ImovelController.php';
     call_user_func(array('ImovelController', 'salvar'));
-    header('Location: index.php?action=listar');
+    header('Location: index.php?action=cadImovel');
 }
 ?>
 

@@ -1,6 +1,6 @@
 <?php
-require_once 'controller/UsuarioController.php';
-require_once 'controller/ImovelController.php';
+require_once __DIR__ . '/controller/UsuarioController.php';
+require_once __DIR__ . '/controller/ImovelController.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,7 @@ require_once 'controller/ImovelController.php';
             require_once 'view/listUsuario.php';
         }
         if ($_GET['action'] == 'cadImovel') {
+            $imovel = call_user_func(array('ImovelController', 'editar'), $_GET['id']);
             require_once 'view/cadImovel.php';
         }
     } else {

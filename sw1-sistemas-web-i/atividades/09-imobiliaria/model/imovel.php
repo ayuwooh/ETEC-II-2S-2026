@@ -43,7 +43,7 @@ class Imovel extends Banco
 
     public function getValor()
     {
-        return $this->id;
+        return $this->valor;
     }
 
     public function setValor($valor)
@@ -53,7 +53,7 @@ class Imovel extends Banco
 
     public function getTipo()
     {
-        return $this->id;
+        return $this->tipo;
     }
 
     public function setTipo($tipo)
