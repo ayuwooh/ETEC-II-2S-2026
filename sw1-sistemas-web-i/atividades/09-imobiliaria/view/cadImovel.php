@@ -1,3 +1,11 @@
+<?php
+if (isset($_POST['btnSalvar'])) {
+    require_once __DIR__ . '/../controller/ImovelController.php';
+    call_user_func(array('ImovelController', 'salvar'));
+    header('Location: index.php?action=listarImovel');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,13 +32,5 @@
         <input type="submit" class="btn-default" name="btnSalvar" id="btnSalvar">
     </form>
 </body>
-
-<?php
-if (isset($_POST['btnSalvar'])) {
-    require_once __DIR__ . '/../controller/ImovelController.php';
-    call_user_func(array('ImovelController', 'salvar'));
-    header('Location: index.php?action=listarImovel');
-}
-?>
 
 </html>

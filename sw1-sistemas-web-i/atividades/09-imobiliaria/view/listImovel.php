@@ -20,7 +20,7 @@
                     <th>Foto</th>
                     <th>Valor</th>
                     <th>Tipo</th>
-                    <th><a href="cadImovel.php">Novo</a></th>
+                    <th><a href="index.php?action=cadImovel">Novo</a></th>
                 </tr>
             </thead>
             <tbody>

@@ -17,6 +17,9 @@ require_once __DIR__ . '/controller/ImovelController.php';
 <body>
     <?php
     if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'cadUsuario') {
+            require_once 'view/cadUsuario.php';
+        }
         if ($_GET['action'] == 'editarUsuario') {
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
             $usuario = call_user_func(array('UsuarioController', 'editar'), $_GET['id']);
@@ -25,11 +28,14 @@ require_once __DIR__ . '/controller/ImovelController.php';
         if ($_GET['action'] == 'listarUsuario') {
             require_once 'view/listUsuario.php';
         }
-
         if ($_GET['action'] == 'excluirUsuario') {
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
             $usuario = call_user_func(array('UsuarioController', 'excluir'), $_GET['id']);
             require_once 'view/listUsuario.php';
+        }
+
+        if ($_GET['action'] == 'cadImovel') {
+            require_once 'view/cadImovel.php';
         }
         if ($_GET['action'] == 'editarImovel') {
             $imovel = call_user_func(array('ImovelController', 'editar'), $_GET['id']);
@@ -40,7 +46,7 @@ require_once __DIR__ . '/controller/ImovelController.php';
         }
         if ($_GET['action'] == 'excluirImovel') {
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
-            $usuario = call_user_func(array('ImovelController', 'excluir'), $_GET['id']);
+            $imovel = call_user_func(array('ImovelController', 'excluir'), $_GET['id']);
             require_once 'view/listImovel.php';
         }
     } else {

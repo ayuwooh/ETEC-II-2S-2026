@@ -106,7 +106,37 @@ class Imovel extends Banco
         return $result;
     }
 
-    public function find($id) {}
+    public function find($id) 
+    {
+        $result = false;
 
-    public function remove($id) {}
+        $conexao = new Conexao();
+
+        if ($conn = $conexao->getConnection()) {
+            $query = "SELECT * FROM imovel WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            if ($stmt->execute(array(':id' => $id))) {
+                if ($stmt->rowCount() > 0) {
+                    $result = $stmt->fetchObject(Imovel::class);
+                }
+            }
+        }
+        return $result;
+    }
+
+    public function remove($id) 
+    {
+        $result = false;
+
+        $conexao = new Conexao();
+
+        if ($conn = $conexao->getConnection()) {
+            $query = "DELETE FROM imovel WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            if ($stmt->execute(array(':id' => $id))) {
+                $result = true;
+            }
+        }
+        return $result;
+    }
 }
