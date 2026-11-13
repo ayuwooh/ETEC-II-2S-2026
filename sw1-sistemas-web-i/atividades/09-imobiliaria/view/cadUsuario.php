@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['btnSalvar'])) {
     require_once __DIR__ . '/../controller/UsuarioController.php';
-    call_user_func(array('UsuarioController', 'salvar'));
+    call_user_func(['UsuarioController', 'salvar']);
     header('Location: index.php?action=listarUsuario');
 }
 ?>

@@ -27,11 +27,11 @@
                 <?php
                 require_once __DIR__ . '/../controller/ImovelController.php';
 
-                $imoveis = call_user_func(array('ImovelController', 'listar'));
+                $imoveis = call_user_func(['ImovelController', 'listar']);
 
                 if (isset($imoveis) && !empty($imoveis)) {
                     foreach ($imoveis as $imovel) {
-                ?>
+                        ?>
                         <tr>
                             <td><?php echo $imovel->getDescricao(); ?></td>
                             <td><?php echo $imovel->getFoto(); ?></td>

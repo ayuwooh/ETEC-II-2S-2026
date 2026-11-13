@@ -58,15 +58,15 @@ class Usuario extends Banco
 
         if ($conn = $conexao->getConnection()) {
             if ($this->id > 0) {
-                $query = "UPDATE usuario SET login = :login, senha = :senha, permissao = :permissao WHERE id = :id";
+                $query = 'UPDATE usuario SET login = :login, senha = :senha, permissao = :permissao WHERE id = :id';
                 $stmt = $conn->prepare($query);
-                if ($stmt->execute(array(':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao, ':id' => $this->id))) {
+                if ($stmt->execute([':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao, ':id' => $this->id])) {
                     $result = $stmt->rowCount();
                 }
             } else {
                 $query = 'insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)';
                 $stmt = $conn->prepare($query);
-                if ($stmt->execute(array(':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao))) {
+                if ($stmt->execute([':login' => $this->login, ':senha' => $this->senha, ':permissao' => $this->permissao])) {
                     $result = $stmt->rowCount();
                 }
             }
@@ -74,7 +74,9 @@ class Usuario extends Banco
         return $result;
     }
 
-    public function count() {}
+    public function count()
+    {
+    }
 
     public function listAll()
     {
@@ -99,9 +101,9 @@ class Usuario extends Banco
     {
         $conexao = new Conexao();
         $conn = $conexao->getConnection();
-        $query = "SELECT * FROM usuario where id = :id";
+        $query = 'SELECT * FROM usuario where id = :id';
         $stmt = $conn->prepare($query);
-        if ($stmt->execute(array(':id' => $id))) {
+        if ($stmt->execute([':id' => $id])) {
             if ($stmt->rowCount() > 0) {
                 $result = $stmt->fetchObject(Usuario::class);
             }
@@ -116,9 +118,9 @@ class Usuario extends Banco
         $result = false;
         $conexao = new Conexao();
         $conn = $conexao->getConnection();
-        $query = "DELETE FROM usuario where id = :id";
+        $query = 'DELETE FROM usuario where id = :id';
         $stmt = $conn->prepare($query);
-        if ($stmt->execute(array(':id' => $id))) {
+        if ($stmt->execute([':id' => $id])) {
             $result = true;
         }
         return $result;

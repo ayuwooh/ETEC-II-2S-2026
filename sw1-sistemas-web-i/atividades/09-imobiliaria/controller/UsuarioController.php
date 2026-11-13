@@ -4,7 +4,7 @@ require_once __DIR__ . '/../model/usuario.php';
 
 class UsuarioController
 {
-    static public function salvar()
+    public static function salvar()
     {
         $usuario = new Usuario();
 
@@ -16,20 +16,20 @@ class UsuarioController
         $usuario->save();
     }
 
-    static public function listar()
+    public static function listar()
     {
         $usuarios = new Usuario();
         return $usuarios->listAll();
     }
 
-    static public function editar($id)
+    public static function editar($id)
     {
         $usuario = new Usuario();
         $usuario = $usuario->find($id);
         return $usuario;
     }
 
-    static public function excluir($id)
+    public static function excluir($id)
     {
         $usuario = new Usuario();
         $usuario = $usuario->remove($id);

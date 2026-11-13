@@ -69,15 +69,15 @@ class Imovel extends Banco
 
         if ($conn = $conexao->getConnection()) {
             if ($this->id > 0) {
-                $query = "UPDATE imovel SET descricao = :descricao, foto = :foto, valor = :valor, tipo = :tipo WHERE id = :id";
+                $query = 'UPDATE imovel SET descricao = :descricao, foto = :foto, valor = :valor, tipo = :tipo WHERE id = :id';
                 $stmt = $conn->prepare($query);
-                if ($stmt->execute(array(':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor, ':tipo' => $this->tipo, ':id' => $this->id))) {
+                if ($stmt->execute([':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor, ':tipo' => $this->tipo, ':id' => $this->id])) {
                     $result = $stmt->rowCount();
                 }
             } else {
                 $query = 'insert into imovel (id, descricao, foto, valor, tipo) values (null,:descricao,:foto,:valor,:tipo)';
                 $stmt = $conn->prepare($query);
-                if ($stmt->execute(array(':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor, ':tipo' => $this->tipo))) {
+                if ($stmt->execute([':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor, ':tipo' => $this->tipo])) {
                     $result = $stmt->rowCount();
                 }
             }
@@ -85,7 +85,9 @@ class Imovel extends Banco
         return $result;
     }
 
-    public function count() {}
+    public function count()
+    {
+    }
 
     public function listAll()
     {
@@ -106,16 +108,16 @@ class Imovel extends Banco
         return $result;
     }
 
-    public function find($id) 
+    public function find($id)
     {
         $result = false;
 
         $conexao = new Conexao();
 
         if ($conn = $conexao->getConnection()) {
-            $query = "SELECT * FROM imovel WHERE id = :id";
+            $query = 'SELECT * FROM imovel WHERE id = :id';
             $stmt = $conn->prepare($query);
-            if ($stmt->execute(array(':id' => $id))) {
+            if ($stmt->execute([':id' => $id])) {
                 if ($stmt->rowCount() > 0) {
                     $result = $stmt->fetchObject(Imovel::class);
                 }
@@ -124,16 +126,16 @@ class Imovel extends Banco
         return $result;
     }
 
-    public function remove($id) 
+    public function remove($id)
     {
         $result = false;
 
         $conexao = new Conexao();
 
         if ($conn = $conexao->getConnection()) {
-            $query = "DELETE FROM imovel WHERE id = :id";
+            $query = 'DELETE FROM imovel WHERE id = :id';
             $stmt = $conn->prepare($query);
-            if ($stmt->execute(array(':id' => $id))) {
+            if ($stmt->execute([':id' => $id])) {
                 $result = true;
             }
         }

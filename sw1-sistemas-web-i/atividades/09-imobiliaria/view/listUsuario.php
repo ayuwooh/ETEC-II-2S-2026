@@ -25,11 +25,11 @@
                 <?php
                 require_once __DIR__ . '/../controller/UsuarioController.php';
 
-                $usuarios = call_user_func(array('UsuarioController', 'listar'));
+                $usuarios = call_user_func(['UsuarioController', 'listar']);
 
                 if (isset($usuarios) && !empty($usuarios)) {
                     foreach ($usuarios as $usuario) {
-                ?>
+                        ?>
                         <tr>
                             <td><?php echo $usuario->getLogin(); ?></td>
                             <td><?php echo $usuario->getPermissao(); ?></td>
