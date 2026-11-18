@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guias de eventos JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <script src="script/script.js" defer></script>
+</head>
+<body class="bg-body-tertiary">
+
+<header class="bg-dark text-white py-4 mb-4">
+    <div class="container">
+        <h1 class="display-6 fw-bold mb-1">Guias de eventos JavaScript</h1>
+        <p class="lead mb-0">Clique nas guias para estudar cada evento. Cada guia traz explicação, exemplo ao vivo e o código usado.</p>
+    </div>
+</header>
+
+<main class="container pb-5">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <span class="badge text-bg-primary" id="indicador-guias">Guia 1 de 15</span>
+        <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary" id="btn-anterior" type="button">← Voltar</button>
+            <button class="btn btn-primary" id="btn-proximo" type="button">Avançar →</button>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs flex-nowrap overflow-auto" id="guia-eventos" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="aba-onclick" data-bs-toggle="tab" data-bs-target="#pane-onclick" type="button" role="tab" aria-controls="pane-onclick" aria-selected="true">onclick</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-ondblclick" data-bs-toggle="tab" data-bs-target="#pane-ondblclick" type="button" role="tab" aria-controls="pane-ondblclick" aria-selected="false">ondblclick</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onmouseover" data-bs-toggle="tab" data-bs-target="#pane-onmouseover" type="button" role="tab" aria-controls="pane-onmouseover" aria-selected="false">onmouseover</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onmouseout" data-bs-toggle="tab" data-bs-target="#pane-onmouseout" type="button" role="tab" aria-controls="pane-onmouseout" aria-selected="false">onmouseout</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onmousemove" data-bs-toggle="tab" data-bs-target="#pane-onmousemove" type="button" role="tab" aria-controls="pane-onmousemove" aria-selected="false">onmousemove</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onmousedown" data-bs-toggle="tab" data-bs-target="#pane-onmousedown" type="button" role="tab" aria-controls="pane-onmousedown" aria-selected="false">onmousedown</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onmouseup" data-bs-toggle="tab" data-bs-target="#pane-onmouseup" type="button" role="tab" aria-controls="pane-onmouseup" aria-selected="false">onmouseup</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onfocus" data-bs-toggle="tab" data-bs-target="#pane-onfocus" type="button" role="tab" aria-controls="pane-onfocus" aria-selected="false">onfocus</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onchange" data-bs-toggle="tab" data-bs-target="#pane-onchange" type="button" role="tab" aria-controls="pane-onchange" aria-selected="false">onchange</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onblur" data-bs-toggle="tab" data-bs-target="#pane-onblur" type="button" role="tab" aria-controls="pane-onblur" aria-selected="false">onblur</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onkeydown" data-bs-toggle="tab" data-bs-target="#pane-onkeydown" type="button" role="tab" aria-controls="pane-onkeydown" aria-selected="false">onkeydown</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onkeypress" data-bs-toggle="tab" data-bs-target="#pane-onkeypress" type="button" role="tab" aria-controls="pane-onkeypress" aria-selected="false">onkeypress</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onkeyup" data-bs-toggle="tab" data-bs-target="#pane-onkeyup" type="button" role="tab" aria-controls="pane-onkeyup" aria-selected="false">onkeyup</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onload" data-bs-toggle="tab" data-bs-target="#pane-onload" type="button" role="tab" aria-controls="pane-onload" aria-selected="false">onload</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-onresize" data-bs-toggle="tab" data-bs-target="#pane-onresize" type="button" role="tab" aria-controls="pane-onresize" aria-selected="false">onresize</button>
+        </li>
+    </ul>
+
+    <div class="tab-content border border-top-0 bg-white rounded-bottom p-4 shadow-sm" id="conteudo-guias">
+
+        <div class="tab-pane fade show active" id="pane-onclick" role="tabpanel" aria-labelledby="aba-onclick">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onclick</h2>
+                    <p class="text-body-secondary">Ocorre quando o usuário clica e solta o botão do mouse sobre o elemento. É o evento mais usado em botões, links e ações simples.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <button class="btn btn-primary" id="demo-click" type="button">Clique aqui</button>
+                        <p class="mt-3 mb-0" id="retorno-click" aria-live="polite">Cliques: 0</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onclick</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const botao = document.querySelector('#demo-click');
+const retorno = document.querySelector('#retorno-click');
+let cliques = 0;
+
+botao.onclick = function () {
+  cliques = cliques + 1;
+  retorno.textContent = 'Cliques: ' + cliques;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-ondblclick" role="tabpanel" aria-labelledby="aba-ondblclick">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">ondblclick</h2>
+                    <p class="text-body-secondary">Ocorre quando o usuário realiza dois cliques rápidos no mesmo elemento. Observe que os dois cliques simples também acontecem antes dele.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <button class="btn btn-outline-primary w-100" id="demo-dblclick" type="button">Dê dois cliques aqui</button>
+                        <p class="mt-3 mb-0" id="retorno-dblclick" aria-live="polite">Aguardando o duplo clique...</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">ondblclick</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const area = document.querySelector('#demo-dblclick');
+const retorno = document.querySelector('#retorno-dblclick');
+
+area.ondblclick = function () {
+  retorno.textContent = 'Duplo clique detectado!';
+  area.textContent = 'Muito bem!';
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onmouseover" role="tabpanel" aria-labelledby="aba-onmouseover">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onmouseover</h2>
+                    <p class="text-body-secondary">Ocorre quando o ponteiro do mouse entra no elemento. É parecido com <code>mouseenter</code>, mas também dispara ao entrar em elementos filhos.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <div class="border rounded p-4 text-center bg-white" id="demo-mouseover">🐱 Passe o mouse aqui</div>
+                        <p class="mt-3 mb-0" id="retorno-mouseover" aria-live="polite">O mouse ainda não entrou.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onmouseover</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const area = document.querySelector('#demo-mouseover');
+const retorno = document.querySelector('#retorno-mouseover');
+
+area.onmouseover = function () {
+  retorno.textContent = 'O mouse entrou na área!';
+  area.classList.add('bg-info-subtle');
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onmouseout" role="tabpanel" aria-labelledby="aba-onmouseout">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onmouseout</h2>
+                    <p class="text-body-secondary">Ocorre quando o ponteiro sai do elemento. É o oposto de <code>onmouseover</code> e costuma ser usado para voltar ao visual original.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <div class="border rounded p-4 text-center bg-info-subtle" id="demo-mouseout">🐶 Entre e depois saia daqui</div>
+                        <p class="mt-3 mb-0" id="retorno-mouseout" aria-live="polite">O mouse ainda não saiu.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onmouseout</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const area = document.querySelector('#demo-mouseout');
+const retorno = document.querySelector('#retorno-mouseout');
+
+area.onmouseout = function () {
+  retorno.textContent = 'O mouse saiu da área!';
+  area.classList.remove('bg-info-subtle');
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onmousemove" role="tabpanel" aria-labelledby="aba-onmousemove">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onmousemove</h2>
+                    <p class="text-body-secondary">Ocorre várias vezes enquanto o ponteiro se move dentro do elemento. É útil para mostrar coordenadas, arrastar objetos ou criar efeitos que acompanham o mouse.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <div class="border rounded p-4 text-center bg-white" id="demo-mousemove">Mova o mouse por aqui</div>
+                        <p class="mt-3 mb-0" id="retorno-mousemove" aria-live="polite">Posição: aguardando movimento...</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onmousemove</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const area = document.querySelector('#demo-mousemove');
+const retorno = document.querySelector('#retorno-mousemove');
+
+area.onmousemove = function (evento) {
+  retorno.textContent = 'X: ' + evento.offsetX + ' | Y: ' + evento.offsetY;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onmousedown" role="tabpanel" aria-labelledby="aba-onmousedown">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onmousedown</h2>
+                    <p class="text-body-secondary">Ocorre no momento em que um botão do mouse é pressionado sobre o elemento, antes de ser solto. O valor <code>0</code> representa o botão esquerdo.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <button class="btn btn-outline-primary w-100" id="demo-mousedown" type="button">Pressione e segure</button>
+                        <p class="mt-3 mb-0" id="retorno-mousedown" aria-live="polite">Botão ainda não pressionado.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onmousedown</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const botao = document.querySelector('#demo-mousedown');
+const retorno = document.querySelector('#retorno-mousedown');
+
+botao.onmousedown = function (evento) {
+  retorno.textContent = 'Botão ' + evento.button + ' pressionado!';
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onmouseup" role="tabpanel" aria-labelledby="aba-onmouseup">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onmouseup</h2>
+                    <p class="text-body-secondary">Ocorre quando o botão do mouse é solto sobre o elemento. Normalmente acontece depois de <code>onmousedown</code> e antes de <code>onclick</code>.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <button class="btn btn-outline-primary w-100" id="demo-mouseup" type="button">Pressione e solte</button>
+                        <p class="mt-3 mb-0" id="retorno-mouseup" aria-live="polite">Botão ainda não solto.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onmouseup</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const botao = document.querySelector('#demo-mouseup');
+const retorno = document.querySelector('#retorno-mouseup');
+
+botao.onmouseup = function () {
+  retorno.textContent = 'Botão solto!';
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onfocus" role="tabpanel" aria-labelledby="aba-onfocus">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onfocus</h2>
+                    <p class="text-body-secondary">Ocorre quando o elemento recebe o foco, seja por clique ou pela tecla Tab. É muito usado em campos de formulário para mostrar dicas.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-focus">Clique no campo</label>
+                        <input class="form-control" id="demo-focus" type="text" placeholder="Digite seu nome">
+                        <p class="mt-3 mb-0" id="retorno-focus" aria-live="polite">O campo ainda não está em foco.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onfocus</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const campo = document.querySelector('#demo-focus');
+const retorno = document.querySelector('#retorno-focus');
+
+campo.onfocus = function () {
+  retorno.textContent = 'O campo recebeu o foco!';
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onchange" role="tabpanel" aria-labelledby="aba-onchange">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onchange</h2>
+                    <p class="text-body-secondary">Ocorre quando o valor de um campo é alterado. Em uma lista <code>select</code>, dispara ao escolher uma opção; em campos de texto, dispara quando o valor muda e o campo perde o foco.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-change">Escolha um café</label>
+                        <select class="form-select" id="demo-change">
+                            <option value="">Selecione...</option>
+                            <option value="Espresso">Espresso</option>
+                            <option value="Cappuccino">Cappuccino</option>
+                            <option value="Mocha">Mocha</option>
+                        </select>
+                        <p class="mt-3 mb-0" id="retorno-change" aria-live="polite">Nenhuma opção escolhida.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onchange</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const select = document.querySelector('#demo-change');
+const retorno = document.querySelector('#retorno-change');
+
+select.onchange = function (evento) {
+  const escolha = evento.target.value;
+  retorno.textContent = escolha === ''
+    ? 'Nenhuma opção escolhida.'
+    : 'Você escolheu: ' + escolha;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onblur" role="tabpanel" aria-labelledby="aba-onblur">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onblur</h2>
+                    <p class="text-body-secondary">Ocorre quando o elemento perde o foco. É o oposto de <code>onfocus</code> e é ideal para validar um campo depois que a pessoa termina de digitar.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-blur">Digite e clique fora</label>
+                        <input class="form-control" id="demo-blur" type="text" placeholder="Digite algo">
+                        <p class="mt-3 mb-0" id="retorno-blur" aria-live="polite">O campo ainda não perdeu o foco.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onblur</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const campo = document.querySelector('#demo-blur');
+const retorno = document.querySelector('#retorno-blur');
+
+campo.onblur = function () {
+  const texto = campo.value.trim();
+  retorno.textContent = texto === ''
+    ? 'O campo ficou vazio.'
+    : 'Você digitou: ' + texto;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onkeydown" role="tabpanel" aria-labelledby="aba-onkeydown">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onkeydown</h2>
+                    <p class="text-body-secondary">Ocorre quando uma tecla é pressionada. Se a tecla ficar segurada, o evento se repete. É indicado para atalhos, setas e teclas de controle.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-keydown">Digite aqui</label>
+                        <input class="form-control" id="demo-keydown" type="text" placeholder="Tecle algo">
+                        <p class="mt-3 mb-0" id="retorno-keydown" aria-live="polite">Nenhuma tecla pressionada.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onkeydown</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const campo = document.querySelector('#demo-keydown');
+const retorno = document.querySelector('#retorno-keydown');
+
+campo.onkeydown = function (evento) {
+  retorno.textContent = 'Tecla: ' + evento.key +
+    ' | Código: ' + evento.code;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onkeypress" role="tabpanel" aria-labelledby="aba-onkeypress">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onkeypress</h2>
+                    <p class="text-body-secondary">Ocorria quando uma tecla que gera caractere era pressionada. Este evento está obsoleto; em código novo, use <code>onkeydown</code> ou <code>beforeinput</code>.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-keypress">Digite uma letra</label>
+                        <input class="form-control" id="demo-keypress" type="text" placeholder="Tecle uma letra">
+                        <p class="mt-3 mb-0" id="retorno-keypress" aria-live="polite">Nenhum caractere digitado.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onkeypress</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const campo = document.querySelector('#demo-keypress');
+const retorno = document.querySelector('#retorno-keypress');
+
+campo.onkeypress = function (evento) {
+  retorno.textContent = 'Caractere: ' + evento.key;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onkeyup" role="tabpanel" aria-labelledby="aba-onkeyup">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onkeyup</h2>
+                    <p class="text-body-secondary">Ocorre quando uma tecla é solta. É muito usado para contar caracteres ou atualizar a tela depois que a digitação termina.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <label class="form-label" for="demo-keyup">Digite aqui</label>
+                        <input class="form-control" id="demo-keyup" type="text" placeholder="Tecle algo">
+                        <p class="mt-3 mb-0" id="retorno-keyup" aria-live="polite">Nenhuma tecla solta.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onkeyup</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const campo = document.querySelector('#demo-keyup');
+const retorno = document.querySelector('#retorno-keyup');
+
+campo.onkeyup = function (evento) {
+  retorno.textContent = 'Você soltou a tecla: ' + evento.key;
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onload" role="tabpanel" aria-labelledby="aba-onload">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onload</h2>
+                    <p class="text-body-secondary">Ocorre quando a página, uma imagem ou outro recurso termina de carregar. Em <code>window</code>, é usado para iniciar ações assim que tudo estiver pronto.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <p class="mb-0" id="retorno-load" aria-live="polite">Aguardando o carregamento...</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onload</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>window.onload = function () {
+  const agora = new Date().toLocaleTimeString('pt-BR');
+  const retorno = document.querySelector('#retorno-load');
+  retorno.textContent = 'Página carregada às ' + agora + '.';
+};</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pane-onresize" role="tabpanel" aria-labelledby="aba-onresize">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="h4">onresize</h2>
+                    <p class="text-body-secondary">Ocorre quando o tamanho da janela do navegador é alterado. Redimensione a janela para ver as medidas sendo atualizadas.</p>
+                    <div class="border rounded p-3 bg-light">
+                        <p class="fw-semibold mb-2">Exemplo ao vivo</p>
+                        <p class="mb-0" id="retorno-resize" aria-live="polite">Medidas: aguardando...</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-semibold">Código JavaScript</span>
+                        <span class="badge text-bg-dark">onresize</span>
+                    </div>
+                    <pre class="bg-dark text-light p-3 rounded mb-0"><code>const retorno = document.querySelector('#retorno-resize');
+let atualizacoes = 0;
+
+function mostrarMedidas() {
+  atualizacoes = atualizacoes + 1;
+  retorno.textContent = 'Janela: ' + window.innerWidth +
+    ' x ' + window.innerHeight + ' px | Atualizações: ' + atualizacoes;
+}
+
+window.onresize = mostrarMedidas;
+mostrarMedidas();</code></pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>
